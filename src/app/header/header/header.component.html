@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+      aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Money Well</a>
+  
+    <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo03">
+      <ul class="nav navbar-nav ml-auto ml-2 ml-lg-0">
+        <li *ngIf="!isUserLoggedIn" class="nav-item">
+          <a class="nav-link" [routerLink]="['./register']" routerLinkActive="active">Register</a>
+        </li>
+        <li *ngIf="!isUserLoggedIn" class="nav-item">
+          <a class="nav-link" [routerLink]="['./login']" routerLinkActive="active">Login</a>
+        </li>
+        <li *ngIf="isUserLoggedIn" class="nav-item">
+          <a class="nav-link" [routerLink]="['./home']" routerLinkActive="active">bank</a>
+        </li>
+        <li *ngIf="isUserLoggedIn" class="nav-item">
+          <a class="nav-link" style="cursor: pointer;" (click)="logout()">Logout</a>
+        </li>
+        <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Disabled</a>
+          </li> -->
+      </ul>
+    </div>
+  </nav>
